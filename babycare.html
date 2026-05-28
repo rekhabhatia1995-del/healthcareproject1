@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <header class="bg-blue-950 text-white font-semibold p-4 rounded-bl-[60px] rounded-br-[60px]">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+            <div class="flex items-center">
+                <img src="images/healthlogo.png" class="w-28 sm:w-32 h-auto" />
+            </div>
+
+            <nav class="w-full sm:w-auto">
+                <ul class="flex flex-wrap gap-4 sm:gap-8 cursor-pointer justify-start sm:justify-center">
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+                        <a href="index.html"> Home </a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+                        <a href="about.html" class="block">About</a>
+                    </li>
+
+                    <li class="group relative hover:border-b-2 border-orange-500 hover:text-orange-500">
+                        <button type="button" class="block flex items-center gap-2">
+                            <span>Service</span>
+
+                            <svg class="w-4 h-4 text-current" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <ul
+                            class="absolute left-0 top-full w-48 bg-white text-black rounded-lg shadow-lg hidden group-hover:block z-50">
+                            <li class="px-4 py-2 hover:bg-orange-50">
+                                <a href="attendent.html" class="block">Attendant</a>
+                            </li>
+                            <li class="px-4 py-2 hover:bg-orange-50">
+                                <a href="physitheropist.html" class="block">Physiotherapy</a>
+                            </li>
+                            <li class="px-4 py-2 hover:bg-orange-50">
+                                <a href="nursing.html" class="block">Nursing</a>
+                            </li>
+                            <li class="px-4 py-2 hover:bg-orange-50">
+                                <a href="medicalequipment.html" class="block">Medical Equipment</a>
+                            </li>
+                            <li class="px-4 py-2 hover:bg-orange-50">
+                                <a href="babycare.html" class="block">Baby care</a>
+                            </li>
+                            <li class="px-4 py-2 hover:bg-orange-50">
+                                <a href="eldercare.html" class="block">Elder care</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+                        <a href="blogs.html" class="block">Blog</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+                        <a href="booknow.html" class="block">Book Now</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="text-sm sm:text-base whitespace-nowrap">
+                <h1> Call Us 8069048802</h1>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div
+            class="bg-[url('https://m.media-amazon.com/images/I/51woo0YgR7L.jpg')] min-h-[70vh] sm:min-h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row">
+            <div class="w-full md:w-auto md:ml-10 px-4 sm:px-6 lg:px-0 py-8 md:py-0">
+
+                <h1 class="text-blue-950 text-3xl text-left  font-bold  mt-4">
+                    Trust Care24 for Baby Care
+
+                </h1>
+                <p class="font-semibold text-2xl text-left  text-blue-950 mt-4"> Care24 provides comprehensive newborn
+                    baby and mother care at
+                    home and <br /> experienced nannies for newborn baby –</p>
+                <ul class="font-semibold text-xl text-left mt-8">
+                    <li> <span class="text-blue-950 text-lg">✔</span> Bathing and Regular Massaging of the baby</li>
+                    <li><span class="text-blue-950 text-lg">✔</span> Cleaning and Sterilizing the baby's utensils</li>
+                    <li><span class="text-blue-950 text-lg">✔</span> Ensuring the daily required feeds and helping the baby to burp after every feed</li>
+                    <li><span class="text-blue-950 text-lg">✔</span> Properly cleaning sensitive parts after nappy change</li>
+                    <li><span class="text-blue-950 text-lg">✔</span> Putting the baby to bed</li>
+                    <li><span class="text-blue-950 text-lg">✔</span> Proper Care during illness</li>
+                    <li> <span class="text-blue-950 text-lg">✔</span>Experience caretaker for newborn baby</li>
+                </ul>
+            </div>
+
+            <div class="w-full md:w-[420px] md:mr-10 m-10 ">
+
+
+                    <div class="mb-6">
+
+                        <label class="text-blue-950 text-xl font-semibold block mb-3">
+                            Name*
+                        </label>
+
+                        <input type="text" placeholder="Your Name..."
+                            class="w-full p-2 rounded-lg outline-none text-gray-700 text-xl" />
+                    </div>
+
+                
+                    <div class="mb-6">
+                        <label class="text-blue-950 text-xl font-semibold block mb-3">
+                            Phone*
+                        </label>
+
+                        <input type="text" placeholder="Your Mobile..."
+                            class="w-full p-2 rounded-lg outline-none text-gray-700 text-xl" />
+                    </div>
+
+                
+                    <div class="mb-6">
+                        <label class="text-blue-950 text-xl font-semibold block mb-3">
+                            Select Your City*
+                        </label>
+
+                        <select class="w-full  p-2 rounded-lg outline-none text-gray-700 text-xl">
+                            <option>--</option>
+                            <option>Delhi</option>
+                            <option>Mumbai</option>
+                            <option>Lucknow</option>
+                            <option>Noida</option>
+                        </select>
+                    </div>
+
+                    
+                        <div class="mb-8">
+                        <label class="text-blue-950 text-xl font-semibold block mb-3">
+                            Expected No. of Service Days
+                        </label>
+
+                        <select class="w-full  p-2 rounded-lg outline-none text-gray-700 text-xl">
+                            <option>--</option>
+                            <option>1 Day</option>
+                            <option>3 Days</option>
+                            <option>5 Days</option>
+                            <option>7 Days</option>
+                        </select>
+                    </div>
+
+                
+                    <button
+                        class="w-full p-2 bg-green-600 text-white text-xl font-semibold rounded-lg hover:bg-cyan-500"> 
+                        Submit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+    
+    <div class="text-center mb-14 mt-6">
+      <h1 class="text-4xl font-bold text-gray-700">
+        CUSTOMER REVIEWS
+      </h1>
+
+      <p class="text-gray-500 mt-3 text-lg">
+        Highly rated by thousands of patients all over India
+      </p>
+    </div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-4 sm:px-6 lg:px-10">
+
+      <div class="border-r border-gray-300 text-center py-8">
+        <h1 class="text-3xl font-semibold">
+          <span class="text-blue-500">G</span>
+          <span class="text-red-500">o</span>
+          <span class="text-yellow-500">o</span>
+          <span class="text-blue-500">g</span>
+          <span class="text-green-500">l</span>
+          <span class="text-red-500">e</span>
+        </h1>
+
+        <div class="mt-6 text-yellow-400 text-2xl">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+
+      
+      <div class="border-r border-gray-300 text-center py-8">
+        <h1 class="text-3xl font-bold text-blue-700">
+          practo.
+        </h1>
+
+        <div class="mt-6 text-yellow-400 text-2xl">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+
+    
+      <div class="border-r border-gray-300 text-center py-8">
+        <h1 class="text-3xl font-semibold text-gray-700">
+          lybra<span class="text-red-500">❤</span>e
+        </h1>
+
+        <div class="mt-6 text-yellow-400 text-2xl">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+
+      
+      <div class="text-center py-8">
+        <h1 class="text-3xl font-bold">
+          <span class="text-blue-700">Just</span><span class="text-red-500">dial</span>
+        </h1>
+
+        <div class="mt-6 text-yellow-400 text-2xl">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+        </div>
+    </section>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 bg-gray-100">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+
+    
+      <div class="md:col-span-2">
+
+    
+        <h1 class="text-4xl font-semibold text-blue-900 text-center mb-6">
+          CARE24’S INFANT CARE SERVICES
+        </h1>
+
+    
+        <div class="border-b border-gray-300 mb-8"></div>
+
+        
+        <p class="text-gray-700 ">
+          We at Care24 understand that handling a new baby involves
+          special care as well as the right experience and this can be very
+          well managed with the services of a trained professional.
+          Care24 provides comprehensive newborn baby and mother care at
+          home and experienced nannies for newborn baby.
+        </p>
+
+        <p class="text-gray-700  mt-6">
+          Care24’s nurses are well experienced in baby care and can offer
+          guidance and advice that a new mother truly needs. From
+          queries regarding frequency of breastfeeding, the infant' sleep
+          pattern, proper clothing, infant hygiene to the mother’s diet and
+          relaxation, our Care24 nurses can guide and help you walk the
+          path of motherhood with newfound ease.
+        </p>
+
+      </div>
+
+      
+      <div class="pt-24">
+
+        <h2 class="text-xl font-bold text-red-900 mb-8">
+          QUESTIONS ?
+        </h2>
+
+        
+        <div class="bg-[#8b2d1f] text-white text-xl font-bold text-center p-2 rounded-xl mb-6 shadow-lg">
+          08069048802
+        </div>
+
+    
+        <div class="bg-[#8b2d1f] text-white text-xl font-bold text-center p-2 rounded-xl shadow-lg">
+          support@care24.co.in
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+ <section class="py-16 px-4 sm:px-6 lg:px-10">
+
+    
+    <h1 class="text-5xl font-semibold text-center text-blue-950 mb-16">
+      WHY CHOOSE OUR TEAM
+    </h1>
+
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+      
+      <div class="space-y-16">
+
+    
+        <div class="flex gap-6">
+          <div class="text-blue-950 text-5xl">
+            <i class="fa-solid fa-baby"></i>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-medium text-gray-700">
+              Experienced Staff
+            </h2>
+
+            <p class="text-gray-500 text-xl mt-2 leading-10">
+              Our team of experienced caretakers for newborn baby
+              have years of specialized experience.
+            </p>
+          </div>
+        </div>
+
+        
+        <div class="flex gap-6">
+          <div class="text-blue-950 text-5xl">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-medium text-gray-700">
+              Certified Team
+            </h2>
+
+            <p class="text-gray-500 text-xl mt-2 leading-10">
+              Our team of baby caretakers is well certified and qualified.
+            </p>
+          </div>
+        </div>
+
+    
+        <div class="flex gap-6">
+          <div class="text-blue-950 text-5xl">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-medium text-gray-700">
+              Constantly Trained
+            </h2>
+
+            <p class="text-gray-500 text-xl mt-2 leading-10">
+              Our team goes through regular drills to keep ready
+              for all situations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="space-y-16">
+
+        
+        <div class="flex gap-6">
+          <div class="text-blue-950 text-5xl">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-medium text-gray-700">
+              One to One Care
+            </h2>
+
+            <p class="text-gray-500 text-xl mt-2 leading-10">
+              Be it late in the night or early in the morning,
+              our baby caretakers are always there to help you.
+            </p>
+          </div>
+        </div>
+
+    
+        <div class="flex gap-6">
+          <div class="text-blue-950 text-5xl">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-medium text-gray-700">
+              100% Verified
+            </h2>
+
+            <p class="text-gray-950 text-xl mt-2 leading-10">
+              We have a completely transparent system that is
+              designed to be with the patient at every stage.
+            </p>
+          </div>
+        </div>
+
+    
+        <div class="flex gap-6">
+          <div class="text-blue-950 text-5xl">
+            <i class="fa-solid fa-hand-sparkles"></i>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-medium text-gray-700">
+              Health and Hygiene
+            </h2>
+
+            <p class="text-gray-500 text-xl mt-2 leading-10">
+              New babies are prone infections. We take the utmost
+              care to promote health & hygiene of the baby.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+<section class="bg-blue-950  py-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 text-center">
+
+    
+      <div class="border-r border-blue-300 px-6">
+
+        <div class="text-white text-6xl mb-5">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+
+        <h1 class="text-white text-6xl font-bold">
+          100,000+
+        </h1>
+
+        <p class="text-white text-2xl mt-3">
+          Happy Patients
+        </p>
+
+      </div>
+
+      <div class="border-r border-blue-300 px-6">
+
+        <div class="text-white text-6xl mb-5">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+
+        <h1 class="text-white text-6xl font-bold">
+          9
+        </h1>
+
+        <p class="text-white text-2xl mt-3">
+          Years Of Experience
+        </p>
+
+      </div>
+
+      
+      <div class="border-r border-blue-300 px-6">
+
+        <div class="text-white text-6xl mb-5">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <h1 class="text-white text-6xl font-bold">
+          200+
+        </h1>
+
+        <p class="text-white text-2xl mt-3">
+          Strong Team
+        </p>
+
+      </div>
+
+
+      <div class="px-6">
+
+        <div class="text-white text-6xl mb-5">
+          <i class="fa-solid fa-stethoscope"></i>
+        </div>
+
+        <h1 class="text-white text-6xl font-bold">
+          9
+        </h1>
+
+        <p class="text-white text-2xl mt-3">
+          Cities We Operate In
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+    <footer class="bg-blue-950 text-white px-4 sm:px-6 lg:px-10 py-4 rounded-tl-[60px] rounded-tr-[60px] mt-8">
+
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-10 border-b border-gray-400 pb-2">
+
+
+            <div class="md:col-span-2 border-r border-gray-400 pr-8">
+
+                <h1 class="text-4xl font-bold mb-2">care24</h1>
+
+                <p class="text-gray-300 mb-2">
+                    World Class Cares at Home
+                </p>
+
+                <p class="text-gray-300  mb-2">
+                    Now be stress-free. Care24 is here to take care of your loved ones.
+                </p>
+
+                <h2 class="text-2xl font-semibold mb-2">
+                    Contact Us
+                </h2>
+
+                <p class="mb-2">+91 08069048802</p>
+                <p class="mb-8">support@care24.co.in</p>
+
+
+                <div class="flex gap-4">
+
+                    <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center">
+
+                        <a href="https://www.facebook.com/Care24athome" target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+
+                    <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center">
+                        <a href="https://x.com/">
+                            <i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+
+                    <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center">
+                        <a href=" @care24-homenursingservices41">
+                            <i class="fa-brands fa-youtube"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div>
+                <h1 class="text-xl font-semibold mb-2">Company</h1>
+
+                <ul class="space-y-2 text-gray-300">
+                    <li>About Us</li>
+                    <li>Blogs</li>
+                    <li>News</li>
+                    <li>Careers</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-xl font-semibold mb-2">Services</h1>
+
+                <ul class="space-y-2 text-gray-300">
+                    <li>Our Caregivers</li>
+                    <li>Attendant Services</li>
+                    <li>Nursing Services</li>
+                    <li>Elderly Care</li>
+                    <li>Doctor at Home</li>
+                    <li>Physiotherapist</li>
+                    <li>Rehabilitation at Home</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-2xl font-semibold mb-2">Location</h1>
+
+                <ul class="space-y-2 text-gray-300">
+                    <li>Mumbai</li>
+                    <li>Thane</li>
+                    <li>New Mumbai</li>
+                    <li>Delhi</li>
+                    <li>Noida</li>
+                    <li>Gurgaon</li>
+                    <li>Faridabad</li>
+                    <li>Ghaziabad</li>
+                    <li>Bangalore</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-xl font-semibold mb-2">Care for</h1>
+
+                <ul class="text-gray-300">
+                    <li>Arthritis</li>
+                    <li>Cancer</li>
+                    <li>Dementia</li>
+                    <li>Diabetes</li>
+                    <li>Stroke</li>
+                    <li>Alzheimer’s Disease</li>
+                    <li>Cardiovascular Disease</li>
+                    <li>Traumatic Brain Injury</li>
+                    <li>Parkinson’s Disease</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-lg font-semibold mb-2">Helpful Links</h1>
+
+                <ul class=" text-gray-300">
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Payment Policy</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="flex flex-col md:flex-row justify-between items-center pt-2 text-gray-300 text-sm">
+
+            <p>Terms and Conditions</p>
+
+            <p>
+                © 2026 Aegis Care Advisors Pvt. Ltd. All rights reserved
+            </p>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>
