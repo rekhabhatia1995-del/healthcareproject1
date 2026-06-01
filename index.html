@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+about<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,14 +10,20 @@
 </head>
 
 <body>
-    <header class="bg-blue-950 text-white font-semibold p-4 rounded-bl-[60px] rounded-br-[60px]">
+<header class="bg-blue-950 text-white font-semibold p-4 rounded-bl-[60px] rounded-br-[60px]">
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
-            <div class="flex items-center">
+            <div class="flex items-center justify-between">
                 <img src="images/healthlogo.png" class="w-28 sm:w-32 h-auto" />
+
+                <!-- Mobile Burger -->
+                <button id="menuBtn" type="button" class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md hover:bg-white/10" aria-label="Open menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
 
             <nav class="w-full sm:w-auto">
-                <ul class="flex flex-wrap gap-4 sm:gap-8 cursor-pointer justify-start sm:justify-center">
+                <!-- Desktop menu -->
+                <ul class="hidden sm:flex flex-wrap gap-4 sm:gap-8 cursor-pointer justify-start sm:justify-center">
                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
                         <a href="index.html"> Home </a>
                     </li>
@@ -66,51 +72,105 @@
                         <a href="booknow.html">Book Now</a>
                     </li>
                 </ul>
+
+                <!-- Mobile menu -->
+                <ul id="mobileMenu" class="sm:hidden hidden flex-col gap-2 cursor-pointer mt-3 p-3 bg-blue-950/95 backdrop-blur rounded-lg border border-white/10">
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="index.html" class="block">Home</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="about.html" class="block">About</a>
+                    </li>
+
+                    <li class="py-2">
+                        <details class="group">
+                            <summary class="list-none flex items-center justify-between hover:text-orange-500">
+                                <span class="hover:border-b-2 border-orange-500">Service</span>
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </summary>
+                            <ul class="mt-2 pl-4 text-white/95 space-y-2">
+                                <li><a href="attendent.html" class="block hover:text-orange-500" onclick="closeMenu()">Attendant</a></li>
+                                <li><a href="physitheropist.html" class="block hover:text-orange-500" onclick="closeMenu()">Physiotherapy</a></li>
+                                <li><a href="nursing.html" class="block hover:text-orange-500" onclick="closeMenu()">Nursing</a></li>
+                                <li><a href="medicalequipment.html" class="block hover:text-orange-500" onclick="closeMenu()">Medical Equipment</a></li>
+                                <li><a href="babycare.html" class="block hover:text-orange-500" onclick="closeMenu()">Baby care</a></li>
+                                <li><a href="eldercare.html" class="block hover:text-orange-500" onclick="closeMenu()">Elder care</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="blogs.html" class="block" onclick="closeMenu()">Blog</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="booknow.html" class="block" onclick="closeMenu()">Book Now</a>
+                    </li>
+                </ul>
             </nav>
 
-            <div class="text-sm sm:text-base whitespace-nowrap">
+            <div class="text-sm sm:text-base whitespace-nowrap hidden sm:block">
                 <h1> Call Us 8069048802</h1>
             </div>
         </div>
     </header>
 
-    <section>
-        <div class="flex flex-col lg:flex-row justify-between gap-6">
-            <div class="text-center lg:text-left px-4 lg:mt-20 lg:ml-20">
+    <script>
+        function closeMenu() {
+            var el = document.getElementById('mobileMenu');
+            if (el) el.classList.add('hidden');
+        }
+        (function () {
+            var btn = document.getElementById('menuBtn');
+            var menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
 
-                <h1 class="text-4xl md:text-6xl font-semibold  text-blue-950 text-left mt-4 italic"> Largest Home<br />
-                    Healthcare Service<br /> Provider In</h1>
-                <h2 class="text-3xl md:text-5xl font-semibold text-blue-800 mt-4 text-left italic"> Mumbai &amp; Delhi
+            btn.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 640) closeMenu();
+            });
+        })();
+    </script>
+
+    <section>
+        <div class="flex flex-col lg:flex-row justify-between gap-6 px-4 sm:px-6">
+            <div class="text-center lg:text-left px-2 sm:px-4 lg:mt-20 lg:ml-20">
+
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-semibold text-blue-950 text-left mt-4 italic">
+                    Largest Home<br />
+                    Healthcare Service<br />
+                    Provider In
+                </h1>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-semibold text-blue-800 mt-4 text-left italic">
+                    Mumbai &amp; Delhi
                 </h2>
-                <p class="text-lg md:text-2xl mt-8 text-gray-500 text-left italic"> Your health &amp; wellness, our
-                    priority:
-                    Experience.</p>
-                <p class="text-lg md:text-2xl  text-gray-500 text-left italic"> Personal care &amp; support with Care24.
+                <p class="text-base sm:text-lg md:text-2xl mt-6 sm:mt-8 text-gray-500 text-left italic">
+                    Your health &amp; wellness, our priority: Experience.
                 </p>
+                <p class="text-base sm:text-lg md:text-2xl text-gray-500 text-left italic mt-4">
+                    Personal care &amp; support with Care24.
+                </p>
+
                 <div>
                     <button
-                        class="bg-yellow-600  hover:bg-blue-950 text-white rounded-[150px] w-[300px] p-4 mt-10 mr-[200px] ">
-                        Request a
-                        call back </button>
-                </div>
-                <div class="flex ">
-                    <div>
-                        <img src="images/Google-1.png" class="w-36" />
-                    </div>
-                    <div>
-                        <img src="images/Justdial-1.png" class="w-36" />
-                    </div>
-                    <div>
-                        <img src="images/Lybrate-1.png" class="w-36" />
-                    </div>
+                        class="bg-yellow-600 hover:bg-blue-950 text-white rounded-[150px] w-full sm:w-[300px] p-4 mt-6 sm:mt-10">
+                        Request a<br />
+                        call back
+                    </button>
                 </div>
 
-
+                <div class="flex flex-wrap gap-6 mt-6">
+                    <img src="images/Google-1.png" class="w-24 sm:w-36" />
+                    <img src="images/Justdial-1.png" class="w-24 sm:w-36" />
+                    <img src="images/Lybrate-1.png" class="w-24 sm:w-36" />
+                </div>
             </div>
-            <div class="w-full lg:w-auto">
-                <img src="images/nurse.png" class="w-full max-w-[750px] h-auto mt-0 lg:mt-[-70px]" />
-            </div>
 
+            <div class="w-full lg:w-auto flex justify-center lg:justify-end">
+                <img src="images/nurse.png" class="w-full max-w-[520px] sm:max-w-[650px] h-auto mt-0 lg:mt-[-70px]" />
+            </div>
         </div>
     </section>
     <section class="bg-gray-100 mt-[-50px] overflow-hidden">

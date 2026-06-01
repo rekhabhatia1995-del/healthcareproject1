@@ -12,15 +12,22 @@
 <body>
     
 
-    <header class="bg-blue-950 text-white text-2xl font-semibold h-30 p-4 rounded-bl-[60px] rounded-br-[60px] ">
+<header class="bg-blue-950 text-white text-2xl font-semibold h-30 p-4 rounded-bl-[60px] rounded-br-[60px] ">
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 justify-between">
-            <div class="flex items-center">
+            <div class="flex items-center justify-between">
                 <img src="images/healthlogo.png" class="w-28 sm:w-32 h-auto" />
-            </div>
-            <div class="w-full sm:w-auto">
-                <ul class="flex flex-wrap gap-3 sm:gap-8 cursor-pointer justify-start sm:justify-center">
 
-                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+                <!-- Mobile Burger -->
+                <button id="menuBtn" type="button" class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md hover:bg-white/10" aria-label="Open menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <div class="w-full sm:w-auto">
+                <!-- Desktop menu -->
+                <ul class="hidden sm:flex flex-wrap gap-3 sm:gap-8 cursor-pointer justify-start sm:justify-center">
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
                         <a href="index.html"> Home </a>
                     </li>
                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
@@ -71,13 +78,67 @@
                         <a href="booknow.html" class="block">Book Now</a>
                     </li>
                 </ul>
-            </div>
-            <div class="text-sm sm:text-base">
-                <h1 class="whitespace-nowrap"> Call Us 8069048802</h1>
+
+                <!-- Mobile menu -->
+                <ul id="mobileMenu" class="sm:hidden hidden flex-col gap-2 cursor-pointer mt-3 p-3 bg-blue-950/95 backdrop-blur rounded-lg border border-white/10">
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="index.html" class="block">Home</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="about.html" class="block">About</a>
+                    </li>
+
+                    <li class="py-2">
+                        <details class="group">
+                            <summary class="list-none flex items-center justify-between hover:text-orange-500">
+                                <span class="hover:border-b-2 border-orange-500">Service</span>
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </summary>
+                            <ul class="mt-2 pl-4 text-white/95 space-y-2">
+                                <li><a href="attendent.html" class="block hover:text-orange-500" onclick="closeMenu()">Attendant</a></li>
+                                <li><a href="physitheropist.html" class="block hover:text-orange-500" onclick="closeMenu()">Physiotherapy</a></li>
+                                <li><a href="nursing.html" class="block hover:text-orange-500" onclick="closeMenu()">Nursing</a></li>
+                                <li><a href="medicalequipment.html" class="block hover:text-orange-500" onclick="closeMenu()">Medical Equipment</a></li>
+                                <li><a href="babycare.html" class="block hover:text-orange-500" onclick="closeMenu()">Baby care</a></li>
+                                <li><a href="eldercare.html" class="block hover:text-orange-500" onclick="closeMenu()">Elder care</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="blogs.html" class="block" onclick="closeMenu()">Blog</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="booknow.html" class="block" onclick="closeMenu()">Book Now</a>
+                    </li>
+                </ul>
             </div>
 
+            <div class="text-sm sm:text-base hidden sm:block">
+                <h1 class="whitespace-nowrap"> Call Us 8069048802</h1>
+            </div>
         </div>
     </header>
+
+    <script>
+        function closeMenu() {
+            var el = document.getElementById('mobileMenu');
+            if (el) el.classList.add('hidden');
+        }
+        (function () {
+            var btn = document.getElementById('menuBtn');
+            var menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 640) closeMenu();
+            });
+        })();
+    </script>
 
 
     <section class="bg-gray-100 ">
