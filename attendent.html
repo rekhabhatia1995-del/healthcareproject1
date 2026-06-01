@@ -10,15 +10,22 @@
 </head>
 
 <body>
-    <header class="bg-blue-950 text-white text-2xl font-semibold h-30 p-4 rounded-bl-[60px] rounded-br-[60px] ">
+ <header class="bg-blue-950 text-white text-2xl font-semibold h-30 p-4 rounded-bl-[60px] rounded-br-[60px] ">
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 justify-between">
-            <div class="flex items-center">
+            <div class="flex items-center justify-between">
                 <img src="images/healthlogo.png" class="w-28 sm:w-32 h-auto" />
-            </div>
-            <div class="w-full sm:w-auto">
-                <ul class="flex flex-wrap gap-3 sm:gap-8 cursor-pointer justify-start sm:justify-center">
 
-                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+                <!-- Mobile Burger -->
+                <button id="menuBtn" type="button" class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md hover:bg-white/10" aria-label="Open menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <div class="w-full sm:w-auto">
+                <!-- Desktop menu -->
+                <ul class="hidden sm:flex flex-wrap gap-3 sm:gap-8 cursor-pointer justify-start sm:justify-center">
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
                         <a href="index.html"> Home </a>
                     </li>
                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
@@ -68,18 +75,73 @@
                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
                         <a href="booknow.html" class="block">Book Now</a>
                     </li>
-                    
+                </ul>
+
+                <!-- Mobile menu -->
+                <ul id="mobileMenu" class="sm:hidden hidden flex-col gap-2 cursor-pointer mt-3 p-3 bg-blue-950/95 backdrop-blur rounded-lg border border-white/10">
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="index.html" class="block">Home</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="about.html" class="block">About</a>
+                    </li>
+
+                    <li class="py-2">
+                        <details class="group">
+                            <summary class="list-none flex items-center justify-between hover:text-orange-500">
+                                <span class="hover:border-b-2 border-orange-500">Service</span>
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </summary>
+                            <ul class="mt-2 pl-4 text-white/95 space-y-2">
+                                <li><a href="attendent.html" class="block hover:text-orange-500" onclick="closeMenu()">Attendant</a></li>
+                                <li><a href="physitheropist.html" class="block hover:text-orange-500" onclick="closeMenu()">Physiotherapy</a></li>
+                                <li><a href="nursing.html" class="block hover:text-orange-500" onclick="closeMenu()">Nursing</a></li>
+                                <li><a href="medicalequipment.html" class="block hover:text-orange-500" onclick="closeMenu()">Medical Equipment</a></li>
+                                <li><a href="babycare.html" class="block hover:text-orange-500" onclick="closeMenu()">Baby care</a></li>
+                                <li><a href="eldercare.html" class="block hover:text-orange-500" onclick="closeMenu()">Elder care</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="blogs.html" class="block" onclick="closeMenu()">Blog</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="booknow.html" class="block" onclick="closeMenu()">Book Now</a>
+                    </li>
                 </ul>
             </div>
-            <div class="text-sm sm:text-base">
+
+            <div class="text-sm sm:text-base hidden sm:block">
                 <h1 class="whitespace-nowrap"> Call Us 8069048802</h1>
             </div>
-
         </div>
     </header>
 
-     <section class="bg-gray-100 ">
-       
+    <script>
+        function closeMenu() {
+            var el = document.getElementById('mobileMenu');
+            if (el) el.classList.add('hidden');
+        }
+        (function () {
+            var btn = document.getElementById('menuBtn');
+            var menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 640) closeMenu();
+            });
+        })();
+    </script>
+
+
+
+    <section class="bg-gray-100 ">
+
 
 
 
@@ -87,25 +149,28 @@
             <div class="text-left px-4 sm:px-6 lg:px-0 mt-2 lg:mt-6">
 
                 <h1 class=" text-5xl text-blue-950 font-bold italic mt-10">
-                   Trust Care24 for Attendant Services
+                    Trust Care24 for Attendant Services
                 </h1>
                 <h1 class="text-xl text-gray-500  mt-6">
-                   Our attendants are certified caregivers & are able to assist with patient’s mobility, maintaining hygiene, feeding, to helping in exercise and other nursing care specializations –
+                    Our attendants are certified caregivers & are able to assist with patient’s mobility, maintaining
+                    hygiene, feeding, to helping in exercise and other nursing care specializations –
                 </h1>
                 <ul class="ml-10 mt-6">
                     <li> <span class="text-gray-500 text-2xl">✓</span> 100% court & criminal verified </li>
-                    <li> <span class="text-gray-500 text-2xl">✓</span> 70+hrs in-house trained & certified caretaker</li>
+                    <li> <span class="text-gray-500 text-2xl">✓</span> 70+hrs in-house trained & certified caretaker
+                    </li>
                     <li> <span class="text-gray-500 text-2xl">✓</span>3 hrs faster allocation</li>
                     <li> <span class="text-gray-500 text-2xl">✓</span>2000+ service ready Caregivers
                     </li>
                 </ul>
                 <div>
-                    <button class="bg-blue-100 text-blue-800 mt-10 p-4 font-semibold text-xl rounded-[150px]"> 
-                         Request a call back </button>
+                    <button class="bg-blue-100 text-blue-800 mt-10 p-4 font-semibold text-xl rounded-[150px]">
+                        Request a call back </button>
                 </div>
             </div>
             <div class="flex justify-center lg:justify-end">
-                <img src="images/Home-Health-Care-Banner.jpg " class="w-full max-w-[520px] h-auto mt-6 lg:mt-8 rounded-xl p-2 lg:p-6" />
+                <img src="images/Home-Health-Care-Banner.jpg "
+                    class="w-full max-w-[520px] h-auto mt-6 lg:mt-8 rounded-xl p-2 lg:p-6" />
             </div>
 
 
@@ -116,386 +181,517 @@
         <div class="flex flex-col lg:flex-row gap-4">
             <div class="p-2 flex-1">
 
-            <h1 class="text-4xl text-blue-950 font-bold "> Experience superior elderly care with Care24's 70+hrs in-house trained & verified caregivers.</h1>
-            <p class="p-2 text-gray-500 mt-8"> Experience superior elderly care with Care24's 70+hrs in-house trained & verified caregivers.<br/>
-                Caring for our elders is essential, as they become physically and emotionally vulnerable over time. <br/>
-                Care 24 offers experienced Geriatric caregivers who offer the needed support and assistance to elders<br/>
-                 to lead a self-independent and healthier life.
-            </p>
-            <div class="p-8">
+                <h1 class="text-4xl text-blue-950 font-bold "> Experience superior elderly care with Care24's 70+hrs
+                    in-house trained & verified caregivers.</h1>
+                <p class="p-2 text-gray-500 mt-8"> Experience superior elderly care with Care24's 70+hrs in-house
+                    trained & verified caregivers.<br />
+                    Caring for our elders is essential, as they become physically and emotionally vulnerable over time.
+                    <br />
+                    Care 24 offers experienced Geriatric caregivers who offer the needed support and assistance to
+                    elders<br />
+                    to lead a self-independent and healthier life.
+                </p>
+                <div class="p-8">
 
-    <h1 class="text-3xl font-bold mb-8">
-      WHAT YOU CAN EXPECT IN
-      <span class="text-blue-700"> CAREGIVER TASKLIST</span>
-    </h1>
+                    <h1 class="text-3xl font-bold mb-8">
+                        WHAT YOU CAN EXPECT IN
+                        <span class="text-blue-700"> CAREGIVER TASKLIST</span>
+                    </h1>
 
-    <div class="grid md:grid-cols-2 gap-10">
+                    <div class="grid md:grid-cols-2 gap-10">
 
-      
-      <div class="border-l-4 border-black pl-5">
-        
-        <h2 class="text-2xl font-bold text-green-600 mb-4">
-          👍 Do's
-        </h2>
 
-        <ul class="list-disc ml-5 space-y-2">
-          <li>Oral feeding</li>
-          <li>Wash the caregiver clothes</li>
-          <li>Wash clothes in machine</li>
-          <li>Oral medication</li>
-          <li>Assist in daily activities</li>
-          <li>Light massage</li>
-          <li>Maintain cleanliness</li>
-          <li>Prepare basic food</li>
-        </ul>
+                        <div class="border-l-4 border-black pl-5">
 
-      </div>
+                            <h2 class="text-2xl font-bold text-green-600 mb-4">
+                                👍 Do's
+                            </h2>
 
-    
-      <div class="border-l-4 border-pink-400 pl-5">
+                            <ul class="list-disc ml-5 space-y-2">
+                                <li>Oral feeding</li>
+                                <li>Wash the caregiver clothes</li>
+                                <li>Wash clothes in machine</li>
+                                <li>Oral medication</li>
+                                <li>Assist in daily activities</li>
+                                <li>Light massage</li>
+                                <li>Maintain cleanliness</li>
+                                <li>Prepare basic food</li>
+                            </ul>
 
-        <h2 class="text-2xl font-bold text-pink-500 mb-4">
-          👎 Don't
-        </h2>
+                        </div>
 
-        <ul class="list-disc ml-5 space-y-2">
-          <li>IV tube feeding</li>
-          <li>Wash family clothes</li>
-          <li>Wash clothes by hand</li>
-          <li>Injection procedures</li>
-          <li>Domestic work</li>
-          <li>Full body massage</li>
-          <li>Cleaning house</li>
-          <li>Prepare food for family</li>
-        </ul>
 
-      </div>
+                        <div class="border-l-4 border-pink-400 pl-5">
 
-    </div>
+                            <h2 class="text-2xl font-bold text-pink-500 mb-4">
+                                👎 Don't
+                            </h2>
 
-  </div>
+                            <ul class="list-disc ml-5 space-y-2">
+                                <li>IV tube feeding</li>
+                                <li>Wash family clothes</li>
+                                <li>Wash clothes by hand</li>
+                                <li>Injection procedures</li>
+                                <li>Domestic work</li>
+                                <li>Full body massage</li>
+                                <li>Cleaning house</li>
+                                <li>Prepare food for family</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-            <div class="bg-gray-200 w-full lg:max-w-[600px] rounded-2xl mt-4 mx-0 lg:m-4">
-                <form class="p-4 sm:p-6">
+         <div class="bg-gray-200 w-full lg:max-w-[600px] rounded-2xl mx-auto p-4 sm:p-6">
 
-                    <h1 class="text-4xl text-center mt-4"> Request a Callback</h1>
-                    <div>
-                        <label class="block text-xl text-gray-700  ml-4">
-                            Name*
-                        </label>
-                        <input type="text" placeholder="Name"
-                            class="w-[500px] m-4 border-b border-black  py-2 text-lg bg-gray-200 placeholder:text-gray-300 " />
-                    </div>
-                    <div>
-                        <label class="block text-xl text-gray-700  ml-4">
-                            Phone*
-                        </label>
-                        <input type="text" placeholder="Name"
-                            class="w-[500px] m-4 border-b border-black  py-2 text-lg bg-gray-200 placeholder:text-gray-300 " />
-                    </div>
-                    <div>
-                        <label class="block text-xl text-gray-700  ml-4 ">
-                            Select your City*
-                        </label>
-                        <select class="w-[500px] m-4 border-b border-black  text-lg bg-gray-200  text-gray-300">
-                            <option class="text-gray-700">Select City</option>
-                            <option class="text-gray-700">Delhi</option>
-                            <option class="text-gray-700">Mumbai</option>
-                            <option class="text-gray-700">Lucknow</option>
-                            <option class="text-gray-700">Noida</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xl text-gray-700 ml-4">
-                            Requirement/ज़रूरत*
-                        </label>
+    <form>
 
-                        <select class="w-[500px] m-4 border-b border-black text-lg bg-gray-200 text-gray-300 ">
-                            <option class="text-gray-700">Select Requirement</option>
-                            <option class="text-gray-700">General Checkup</option>
-                            <option class="text-gray-700">Emergency</option>
-                            <option class="text-gray-700">Home Care</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button
-                            class="w-[400px] bg-yellow-700 hover:bg-blue-950  ml-20 mt-8 text-white text-xl font-semibold py-4 rounded-full ">
-                            Request a Callback
-                        </button>
-                    </div>
+        <!-- Heading -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl text-center font-semibold mt-4">
+            Request a Callback
+        </h1>
 
-                </form>
-            </div>
+        <!-- Name -->
+        <div class="mt-6">
+            <label class="block text-lg sm:text-xl text-gray-700 mb-2">
+                Name*
+            </label>
+
+            <input type="text" placeholder="Enter your name"
+                class="w-full border-b border-black py-3 text-base sm:text-lg bg-gray-200 placeholder:text-gray-400 outline-none" />
+        </div>
+
+        <!-- Phone -->
+        <div class="mt-6">
+            <label class="block text-lg sm:text-xl text-gray-700 mb-2">
+                Phone*
+            </label>
+
+            <input type="text" placeholder="Enter your phone number"
+                class="w-full border-b border-black py-3 text-base sm:text-lg bg-gray-200 placeholder:text-gray-400 outline-none" />
+        </div>
+
+        <!-- City -->
+        <div class="mt-6">
+            <label class="block text-lg sm:text-xl text-gray-700 mb-2">
+                Select your City*
+            </label>
+
+            <select
+                class="w-full border-b border-black py-3 text-base sm:text-lg bg-gray-200 text-gray-500 outline-none">
+
+                <option>Select City</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Lucknow</option>
+                <option>Noida</option>
+
+            </select>
+        </div>
+
+        <!-- Requirement -->
+        <div class="mt-6">
+            <label class="block text-lg sm:text-xl text-gray-700 mb-2">
+                Requirement / ज़रूरत*
+            </label>
+
+            <select
+                class="w-full border-b border-black py-3 text-base sm:text-lg bg-gray-200 text-gray-500 outline-none">
+
+                <option>Select Requirement</option>
+                <option>General Checkup</option>
+                <option>Emergency</option>
+                <option>Home Care</option>
+
+            </select>
+        </div>
+
+        <!-- Button -->
+        <div class="mt-10 flex justify-center">
+
+            <button
+                class="w-full sm:w-[300px] md:w-[400px] bg-yellow-700 hover:bg-blue-950 transition duration-300 text-white text-lg sm:text-xl font-semibold py-4 rounded-full">
+
+                Request a Callback
+
+            </button>
+
+        </div>
+
+    </form>
+</div>
         </div>
     </section>
-     <section class="p-10">
+    <section class="px-4 md:px-8 lg:px-10 py-10 bg-gray-50">
 
-    
-    <h1 class="text-5xl text-center font-serif mb-10">
-      Top Verified Caregivers 
-      <span class="text-blue-700">Near You!</span>
+    <!-- Heading -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl text-center font-serif mb-10 leading-tight">
+        Top Verified Caregivers
+        <span class="text-blue-700">Near You!</span>
     </h1>
 
-    
-    <div class="grid grid-cols-3 gap-6 ">
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-    
-      <div class="bg-white rounded-2xl shadow p-2 flex gap-4">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col sm:flex-row gap-4">
 
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Lata-Agavane.png"
-          class="w-40 h-40 rounded-2xl object-cover">
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Lata-Agavane.png"
+                class="w-full sm:w-40 h-52 sm:h-40 rounded-2xl object-cover">
 
-        <div class="flex-1">
+            <div class="flex-1">
 
-          <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold">Lata Agavane</h2>
+                <div class="flex justify-between items-start gap-2">
+                    <h2 class="text-xl md:text-2xl font-semibold">
+                        Lata Agavane
+                    </h2>
 
-            <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
-              ★ 4.5
-            </span>
-          </div>
+                    <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                        ★ 4.5
+                    </span>
+                </div>
 
-          <p class="mt-2 font-semibold">Attendant,52</p>
+                <p class="mt-2 font-semibold text-gray-700">
+                    Attendant, 52
+                </p>
 
-          <p class="mt-4"> Something under 5th</p>
+                <p class="mt-3 text-gray-600">
+                    Something under 5th
+                </p>
 
-          <p class="mt-2"> 10 years in clinical nursing</p>
+                <p class="mt-2 text-gray-600">
+                    10 years in clinical nursing
+                </p>
 
-          <button class="bg-blue-700 text-white w-full py-2 rounded-full mt-6">
-            Enquire now
-          </button>
+                <button class="bg-blue-700 hover:bg-blue-800 transition text-white w-full py-2 rounded-full mt-5">
+                    Enquire now
+                </button>
 
+            </div>
         </div>
-      </div>
 
-    
-      <div class="bg-white rounded-2xl shadow p-4 flex gap-4 mt-4">
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col sm:flex-row gap-4">
 
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Sanjay-Malhotra.png"
-          class="w-40 h-40 rounded-2xl object-cover">
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Sanjay-Malhotra.png"
+                class="w-full sm:w-40 h-52 sm:h-40 rounded-2xl object-cover">
 
-        <div class="flex-1">
+            <div class="flex-1">
 
-          <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold">Sanjay Malhotra</h2>
+                <div class="flex justify-between items-start gap-2">
+                    <h2 class="text-xl md:text-2xl font-semibold">
+                        Sanjay Malhotra
+                    </h2>
 
-            <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
-              ★ 4.5
-            </span>
-          </div>
+                    <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                        ★ 4.5
+                    </span>
+                </div>
 
-          <p class="mt-2 font-semibold">Attendant,41</p>
+                <p class="mt-2 font-semibold text-gray-700">
+                    Attendant, 41
+                </p>
 
-          <p class="mt-4"> 8th Pass</p>
+                <p class="mt-3 text-gray-600">
+                    8th Pass
+                </p>
 
-          <p class="mt-2"> 6 years in clinical nursing</p>
+                <p class="mt-2 text-gray-600">
+                    6 years in clinical nursing
+                </p>
 
-          <button class="bg-blue-700 text-white w-full py-2 rounded-full mt-6">
-            Enquire now
-          </button>
+                <button class="bg-blue-700 hover:bg-blue-800 transition text-white w-full py-2 rounded-full mt-5">
+                    Enquire now
+                </button>
 
+            </div>
         </div>
-      </div>
 
-    
-      <div class="bg-white rounded-2xl shadow p-4 flex gap-4">
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col sm:flex-row gap-4">
 
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Rakesh-Gosavi.png"
-          class="w-40 h-40 rounded-2xl object-cover">
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Rakesh-Gosavi.png"
+                class="w-full sm:w-40 h-52 sm:h-40 rounded-2xl object-cover">
 
-        <div class="flex-1">
+            <div class="flex-1">
 
-          <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold">Rakesh Gosavi</h2>
+                <div class="flex justify-between items-start gap-2">
+                    <h2 class="text-xl md:text-2xl font-semibold">
+                        Rakesh Gosavi
+                    </h2>
 
-            <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
-              ★ 4.7
-            </span>
-          </div>
+                    <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                        ★ 4.7
+                    </span>
+                </div>
 
-          <p class="mt-2 font-semibold">Attendant,29</p>
+                <p class="mt-2 font-semibold text-gray-700">
+                    Attendant, 29
+                </p>
 
-          <p class="mt-4"> 10th Pass</p>
+                <p class="mt-3 text-gray-600">
+                    10th Pass
+                </p>
 
-          <p class="mt-2"> 6 years in clinical nursing</p>
+                <p class="mt-2 text-gray-600">
+                    6 years in clinical nursing
+                </p>
 
-          <button class="bg-blue-700 text-white w-full py-2 rounded-full mt-6">
-            Enquire now
-          </button>
+                <button class="bg-blue-700 hover:bg-blue-800 transition text-white w-full py-2 rounded-full mt-5">
+                    Enquire now
+                </button>
 
+            </div>
         </div>
-      </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col sm:flex-row gap-4">
+
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Sudhir-Salve.png"
+                class="w-full sm:w-40 h-52 sm:h-40 rounded-2xl object-cover">
+
+            <div class="flex-1">
+
+                <div class="flex justify-between items-start gap-2">
+                    <h2 class="text-xl md:text-2xl font-semibold">
+                        Sudhir Salve
+                    </h2>
+
+                    <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                        ★ 4.5
+                    </span>
+                </div>
+
+                <p class="mt-2 font-semibold text-gray-700">
+                    Attendant, 52
+                </p>
+
+                <p class="mt-3 text-gray-600">
+                    Something under 5th
+                </p>
+
+                <p class="mt-2 text-gray-600">
+                    10 years in clinical nursing
+                </p>
+
+                <button class="bg-blue-700 hover:bg-blue-800 transition text-white w-full py-2 rounded-full mt-5">
+                    Enquire now
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col sm:flex-row gap-4">
+
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Usha-Asware.png"
+                class="w-full sm:w-40 h-52 sm:h-40 rounded-2xl object-cover">
+
+            <div class="flex-1">
+
+                <div class="flex justify-between items-start gap-2">
+                    <h2 class="text-xl md:text-2xl font-semibold">
+                        Usha Asware
+                    </h2>
+
+                    <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                        ★ 4.5
+                    </span>
+                </div>
+
+                <p class="mt-2 font-semibold text-gray-700">
+                    Attendant, 41
+                </p>
+
+                <p class="mt-3 text-gray-600">
+                    8th Pass
+                </p>
+
+                <p class="mt-2 text-gray-600">
+                    6 years in clinical nursing
+                </p>
+
+                <button class="bg-blue-700 hover:bg-blue-800 transition text-white w-full py-2 rounded-full mt-5">
+                    Enquire now
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col sm:flex-row gap-4">
+
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Diksha-Kalamkar.png"
+                class="w-full sm:w-40 h-52 sm:h-40 rounded-2xl object-cover">
+
+            <div class="flex-1">
+
+                <div class="flex justify-between items-start gap-2">
+                    <h2 class="text-xl md:text-2xl font-semibold">
+                        Diksha Gosavi
+                    </h2>
+
+                    <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                        ★ 4.7
+                    </span>
+                </div>
+
+                <p class="mt-2 font-semibold text-gray-700">
+                    Attendant, 29
+                </p>
+
+                <p class="mt-3 text-gray-600">
+                    10th Pass
+                </p>
+
+                <p class="mt-2 text-gray-600">
+                    6 years in clinical nursing
+                </p>
+
+                <button class="bg-blue-700 hover:bg-blue-800 transition text-white w-full py-2 rounded-full mt-5">
+                    Enquire now
+                </button>
+
+            </div>
+        </div>
 
     </div>
-    <div class="grid grid-cols-3 gap-8 mt-4">
-
-    
-      <div class="bg-white rounded-2xl shadow p-4 flex gap-4">
-
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Sudhir-Salve.png"
-          class="w-40 h-40 rounded-2xl object-cover">
-
-        <div class="flex-1">
-
-          <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold">Sudhir Salve</h2>
-
-            <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
-              ★ 4.5
-            </span>
-          </div>
-
-          <p class="mt-2 font-semibold">Attendant,52</p>
-
-          <p class="mt-4"> Something under 5th</p>
-
-          <p class="mt-2"> 10 years in clinical nursing</p>
-
-          <button class="bg-blue-700 text-white w-full py-2 rounded-full mt-6">
-            Enquire now
-          </button>
-
-        </div>
-      </div>
-
-    
-      <div class="bg-white rounded-2xl shadow p-4 flex gap-4">
-
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Usha-Asware.png"
-          class="w-40 h-40 rounded-2xl object-cover">
-
-        <div class="flex-1">
-
-          <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold">Usha Asware</h2>
-
-            <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
-              ★ 4.5
-            </span>
-          </div>
-
-          <p class="mt-2 font-semibold">Attendant,41</p>
-
-          <p class="mt-4"> 8th Pass</p>
-
-          <p class="mt-2"> 6 years in clinical nursing</p>
-
-          <button class="bg-blue-700 text-white w-full py-2 rounded-full mt-6">
-            Enquire now
-          </button>
-
-        </div>
-      </div>
-
-    
-      <div class="bg-white rounded-2xl shadow p-4 flex gap-4">
-
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600/https://care24.co.in/wp-content/uploads/2023/07/Diksha-Kalamkar.png"
-          class="w-40 h-40 rounded-2xl object-cover">
-
-        <div class="flex-1">
-
-          <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold">Diksha Gosavi</h2>
-
-            <span class="bg-red-500 text-white text-sm px-2 py-1 rounded">
-              ★ 4.7
-            </span>
-          </div>
-
-          <p class="mt-2 font-semibold">Attendant,29</p>
-
-          <p class="mt-4"> 10th Pass</p>
-
-          <p class="mt-2"> 6 years in clinical nursing</p>
-
-          <button class="bg-blue-700 text-white w-full py-2 rounded-full mt-6">
-            Enquire now
-          </button>
-
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-   <section>
+</section>
+    <section class="px-4 py-10">
         <div
-            class="bg-sky-950 text-gray-500 text-2xl font-semibold h-[300px] p-4 rounded-tl-[60px] rounded-tr-[60px]  ">
-            <h1 class="text-4xl text-center text-white italic">
+            class="bg-sky-950 text-gray-500 text-2xl font-semibold rounded-tl-[40px] rounded-tr-[40px] py-10 px-4 md:px-8">
+
+            <!-- Heading -->
+            <h1 class="text-3xl md:text-4xl text-center text-white italic">
                 Highlights of Care24
             </h1>
-            <div class="flex gap-10 justify-center mt-6">
-                <div class="w-96 h-48 bg-white rounded-lg flex text-left  gap-2 p-2">
-                    <div> <i class="fa-solid fa-circle-check"></i></div>
-                    <div>
-                        <h1 class="text-xl mt-2"> PROFESSIONAL & COMPASSIONATE CAREGIVERS:</h1>
-                        <h1 class="text-lg italic "> <span class="text-blue-800">100% </span> court & criminal verified*
-                        </h1>
-                        <p class="text-lg italic"> <span class="text-blue-800">Certified </span> handle medical
-                            conditions*</p>
-                        <p class="text-lg italic"> Medically trained by our professionals for <span
-                                class="text-blue-800">70 hrs*</span></p>
+
+            <!-- Cards -->
+            <div class="flex flex-col lg:flex-row gap-6 justify-center mt-10">
+
+                <!-- Card 1 -->
+                <div class="w-full lg:w-96 min-h-[250px] bg-white rounded-lg flex gap-3 p-4 shadow-lg">
+
+                    <div class="text-green-600 text-3xl mt-2">
+                        <i class="fa-solid fa-circle-check"></i>
                     </div>
 
-                </div>
-                <div class="w-96 h-48 bg-white rounded-lg flex text-flex gap-2 p-2">
-                    <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
                     <div>
-                        <h1 class="text-xl mt-2">Convenient and Personalized Services:</h1>
-                        <h1 class="text-lg italic"> <span class="text-blue-800">365 days </span>dedicated care manager*
+                        <h1 class="text-lg md:text-xl mt-2 font-semibold">
+                            PROFESSIONAL & COMPASSIONATE CAREGIVERS:
                         </h1>
-                        <p class="text-lg italic"> Customized <span class="text-blue-800"> 8hr/10hr/12hr/24hr
-                            </span>care plans*</p>
-                        <p class="text-lg italic"> <span class="text-blue-800"> 2000+</span> attendants & nurse profiles
+
+                        <h1 class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">100% </span>
+                            court & criminal verified*
+                        </h1>
+
+                        <p class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">Certified </span>
+                            handle medical conditions*
                         </p>
 
+                        <p class="text-base md:text-lg italic mt-2">
+                            Medically trained by our professionals for
+                            <span class="text-blue-800">70 hrs*</span>
+                        </p>
                     </div>
                 </div>
-                <div class="w-96 h-48 bg-white rounded-lg flex text-left gap-2 p-2">
-                    <div> <i class="fa-solid fa-calculator "></i></div>
+
+                <!-- Card 2 -->
+                <div class="w-full lg:w-96 min-h-[250px] bg-white rounded-lg flex gap-3 p-4 shadow-lg">
+
+                    <div class="text-red-500 text-3xl mt-2">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+
                     <div>
-                        <h1 class=" text-xl mt-2"> Transparent Pricing:</h1>
-                        <p class="text-lg italic"> <span class="text-blue-800"> No</span> Hidden Costs</p>
-                        <p class="text-lg italic"> <span class="text-blue-800"> Competitively</span> price world class
-                            healthcare<br />
-                            services
+                        <h1 class="text-lg md:text-xl mt-2 font-semibold">
+                            Convenient and Personalized Services:
+                        </h1>
+
+                        <h1 class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">365 days </span>
+                            dedicated care manager*
+                        </h1>
+
+                        <p class="text-base md:text-lg italic mt-2">
+                            Customized
+                            <span class="text-blue-800">
+                                8hr/10hr/12hr/24hr
+                            </span>
+                            care plans*
                         </p>
-                        <p class="text-lg italic"> <span class="text-blue-800"> Refund </span>on unsatisfactory service
+
+                        <p class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">2000+</span>
+                            attendants & nurse profiles
                         </p>
                     </div>
                 </div>
+
+                <!-- Card 3 -->
+                <div class="w-full lg:w-96 min-h-[250px] bg-white rounded-lg flex gap-3 p-4 shadow-lg">
+
+                    <div class="text-yellow-500 text-3xl mt-2">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <h1 class="text-lg md:text-xl mt-2 font-semibold">
+                            Transparent Pricing:
+                        </h1>
+
+                        <p class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">No</span>
+                            Hidden Costs
+                        </p>
+
+                        <p class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">Competitively</span>
+                            priced world class healthcare services
+                        </p>
+
+                        <p class="text-base md:text-lg italic mt-2">
+                            <span class="text-blue-800">Refund</span>
+                            on unsatisfactory service
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-     <footer class="bg-blue-950 text-white px-4 sm:px-6 lg:px-10 py-4 rounded-tl-[60px] rounded-tr-[60px] mt-8">
+    <footer class="bg-blue-950 text-white px-4 sm:px-6 lg:px-10 py-4 rounded-tl-[60px] rounded-tr-[60px] mt-8">
 
 
-    <div class="grid grid-cols-1 md:grid-cols-6 gap-10 border-b border-gray-400 pb-2">
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-10 border-b border-gray-400 pb-2">
 
 
-        <div class="md:col-span-2 border-r border-gray-400 pr-8">
+            <div class="md:col-span-2 border-r border-gray-400 pr-8">
 
-            <h1 class="text-4xl font-bold mb-2">care24</h1>
+                <h1 class="text-4xl font-bold mb-2">care24</h1>
 
-            <p class="text-gray-300 mb-2">
-                World Class Cares at Home
-            </p>
+                <p class="text-gray-300 mb-2">
+                    World Class Cares at Home
+                </p>
 
-            <p class="text-gray-300  mb-2">
-                Now be stress-free. Care24 is here to take care of your loved ones.
-            </p>
+                <p class="text-gray-300  mb-2">
+                    Now be stress-free. Care24 is here to take care of your loved ones.
+                </p>
 
-            <h2 class="text-2xl font-semibold mb-2">
-                Contact Us
-            </h2>
+                <h2 class="text-2xl font-semibold mb-2">
+                    Contact Us
+                </h2>
 
-            <p class="mb-2">+91 08069048802</p>
-            <p class="mb-8">support@care24.co.in</p>
+                <p class="mb-2">+91 08069048802</p>
+                <p class="mb-8">support@care24.co.in</p>
 
-        
-            <div class="flex gap-4">
+
+                <div class="flex gap-4">
 
                     <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center">
 
@@ -515,95 +711,95 @@
                     </div>
 
                 </div>
+            </div>
+
+
+            <div>
+                <h1 class="text-xl font-semibold mb-2">Company</h1>
+
+                <ul class="space-y-2 text-gray-300">
+                    <li>About Us</li>
+                    <li>Blogs</li>
+                    <li>News</li>
+                    <li>Careers</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-xl font-semibold mb-2">Services</h1>
+
+                <ul class="space-y-2 text-gray-300">
+                    <li>Our Caregivers</li>
+                    <li>Attendant Services</li>
+                    <li>Nursing Services</li>
+                    <li>Elderly Care</li>
+                    <li>Doctor at Home</li>
+                    <li>Physiotherapist</li>
+                    <li>Rehabilitation at Home</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-2xl font-semibold mb-2">Location</h1>
+
+                <ul class="space-y-2 text-gray-300">
+                    <li>Mumbai</li>
+                    <li>Thane</li>
+                    <li>New Mumbai</li>
+                    <li>Delhi</li>
+                    <li>Noida</li>
+                    <li>Gurgaon</li>
+                    <li>Faridabad</li>
+                    <li>Ghaziabad</li>
+                    <li>Bangalore</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-xl font-semibold mb-2">Care for</h1>
+
+                <ul class="text-gray-300">
+                    <li>Arthritis</li>
+                    <li>Cancer</li>
+                    <li>Dementia</li>
+                    <li>Diabetes</li>
+                    <li>Stroke</li>
+                    <li>Alzheimer’s Disease</li>
+                    <li>Cardiovascular Disease</li>
+                    <li>Traumatic Brain Injury</li>
+                    <li>Parkinson’s Disease</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="text-lg font-semibold mb-2">Helpful Links</h1>
+
+                <ul class=" text-gray-300">
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Payment Policy</li>
+                </ul>
+            </div>
+
         </div>
 
-    
-        <div>
-            <h1 class="text-xl font-semibold mb-2">Company</h1>
 
-            <ul class="space-y-2 text-gray-300">
-                <li>About Us</li>
-                <li>Blogs</li>
-                <li>News</li>
-                <li>Careers</li>
-                <li>FAQs</li>
-            </ul>
+        <div class="flex flex-col md:flex-row justify-between items-center pt-2 text-gray-300 text-sm">
+
+            <p>Terms and Conditions</p>
+
+            <p>
+                © 2026 Aegis Care Advisors Pvt. Ltd. All rights reserved
+            </p>
+
         </div>
 
-    
-        <div>
-            <h1 class="text-xl font-semibold mb-2">Services</h1>
-
-            <ul class="space-y-2 text-gray-300">
-                <li>Our Caregivers</li>
-                <li>Attendant Services</li>
-                <li>Nursing Services</li>
-                <li>Elderly Care</li>
-                <li>Doctor at Home</li>
-                <li>Physiotherapist</li>
-                <li>Rehabilitation at Home</li>
-            </ul>
-        </div>
-
-        
-        <div>
-            <h1 class="text-2xl font-semibold mb-2">Location</h1>
-
-            <ul class="space-y-2 text-gray-300">
-                <li>Mumbai</li>
-                <li>Thane</li>
-                <li>New Mumbai</li>
-                <li>Delhi</li>
-                <li>Noida</li>
-                <li>Gurgaon</li>
-                <li>Faridabad</li>
-                <li>Ghaziabad</li>
-                <li>Bangalore</li>
-            </ul>
-        </div>
-
-    
-        <div>
-            <h1 class="text-xl font-semibold mb-2">Care for</h1>
-
-            <ul class="text-gray-300">
-                <li>Arthritis</li>
-                <li>Cancer</li>
-                <li>Dementia</li>
-                <li>Diabetes</li>
-                <li>Stroke</li>
-                <li>Alzheimer’s Disease</li>
-                <li>Cardiovascular Disease</li>
-                <li>Traumatic Brain Injury</li>
-                <li>Parkinson’s Disease</li>
-            </ul>
-        </div>
-
-        
-        <div>
-            <h1 class="text-lg font-semibold mb-2">Helpful Links</h1>
-
-            <ul class=" text-gray-300">
-                <li>Terms & Conditions</li>
-                <li>Privacy Policy</li>
-                <li>Payment Policy</li>
-            </ul>
-        </div>
-
-    </div>
-
-
-    <div class="flex flex-col md:flex-row justify-between items-center pt-2 text-gray-300 text-sm">
-
-        <p>Terms and Conditions</p>
-
-        <p>
-            © 2026 Aegis Care Advisors Pvt. Ltd. All rights reserved
-        </p>
-
-    </div>
-
-</footer>
+    </footer>
 </body>
 
 </html>

@@ -10,14 +10,22 @@
 </head>
 
 <body>
-    <header class="bg-blue-950 text-white text-2xl font-semibold h-30 p-4 rounded-bl-[60px] rounded-br-[60px] ">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
-            <div>
+   <header class="bg-blue-950 text-white text-2xl font-semibold h-30 p-4 rounded-bl-[60px] rounded-br-[60px] ">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 justify-between">
+            <div class="flex items-center justify-between">
                 <img src="images/healthlogo.png" class="w-28 sm:w-32 h-auto" />
+
+                <!-- Mobile Burger -->
+                <button id="menuBtn" type="button" class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md hover:bg-white/10" aria-label="Open menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
-            <div>
-                <ul class="flex flex-wrap gap-3 sm:gap-8 cursor-pointer">
-                   <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
+
+            <div class="w-full sm:w-auto">
+                <!-- Desktop menu -->
+                <ul class="hidden sm:flex flex-wrap gap-3 sm:gap-8 cursor-pointer justify-start sm:justify-center">
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
                         <a href="index.html"> Home </a>
                     </li>
                     <li class="hover:border-b-2 border-orange-500 hover:text-orange-500">
@@ -38,7 +46,7 @@
                         </button>
 
 
-                         <ul
+                        <ul
                             class="absolute left-0 top-full  w-48 bg-white text-black rounded-lg shadow-lg hidden group-hover:block z-50">
                             <li class="px-4 py-2 hover:bg-orange-50">
                                 <a href="attendent.html" class="block">Attendant</a>
@@ -68,12 +76,69 @@
                         <a href="booknow.html" class="block">Book Now</a>
                     </li>
                 </ul>
+
+                <!-- Mobile menu -->
+                <ul id="mobileMenu" class="sm:hidden hidden flex-col gap-2 cursor-pointer mt-3 p-3 bg-blue-950/95 backdrop-blur rounded-lg border border-white/10">
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="index.html" class="block">Home</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="about.html" class="block">About</a>
+                    </li>
+
+                    <li class="py-2">
+                        <details class="group">
+                            <summary class="list-none flex items-center justify-between hover:text-orange-500">
+                                <span class="hover:border-b-2 border-orange-500">Service</span>
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </summary>
+                            <ul class="mt-2 pl-4 text-white/95 space-y-2">
+                                <li><a href="attendent.html" class="block hover:text-orange-500" onclick="closeMenu()">Attendant</a></li>
+                                <li><a href="physitheropist.html" class="block hover:text-orange-500" onclick="closeMenu()">Physiotherapy</a></li>
+                                <li><a href="nursing.html" class="block hover:text-orange-500" onclick="closeMenu()">Nursing</a></li>
+                                <li><a href="medicalequipment.html" class="block hover:text-orange-500" onclick="closeMenu()">Medical Equipment</a></li>
+                                <li><a href="babycare.html" class="block hover:text-orange-500" onclick="closeMenu()">Baby care</a></li>
+                                <li><a href="eldercare.html" class="block hover:text-orange-500" onclick="closeMenu()">Elder care</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="blogs.html" class="block" onclick="closeMenu()">Blog</a>
+                    </li>
+                    <li class="hover:border-b-2 border-orange-500 hover:text-orange-500 py-2">
+                        <a href="booknow.html" class="block" onclick="closeMenu()">Book Now</a>
+                    </li>
+                </ul>
             </div>
-            <div>
-                <h1> Call Us 8069048802</h1>
+
+            <div class="text-sm sm:text-base hidden sm:block">
+                <h1 class="whitespace-nowrap"> Call Us 8069048802</h1>
             </div>
         </div>
     </header>
+
+    <script>
+        function closeMenu() {
+            var el = document.getElementById('mobileMenu');
+            if (el) el.classList.add('hidden');
+        }
+        (function () {
+            var btn = document.getElementById('menuBtn');
+            var menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 640) closeMenu();
+            });
+        })();
+    </script>
+
+
 
      <section class="bg-gray-100 ">
         <div class="flex flex-col lg:flex-row gap-6 justify-between px-4 sm:px-6 lg:px-0">
@@ -412,55 +477,112 @@
     </div>
 
   </section>
-   <section>
-        <div
-            class="bg-sky-950 text-gray-500 text-2xl font-semibold h-[300px] p-4 rounded-tl-[60px] rounded-tr-[60px]  ">
-            <h1 class="text-4xl text-center text-white italic">
-                Highlights of Care24
-            </h1>
-            <div class="flex gap-10 justify-center mt-6">
-                <div class="w-96 h-48 bg-white rounded-lg flex text-left  gap-2 p-2">
-                    <div> <i class="fa-solid fa-circle-check"></i></div>
-                    <div>
-                        <h1 class="text-xl mt-2"> PROFESSIONAL & COMPASSIONATE CAREGIVERS:</h1>
-                        <h1 class="text-lg italic "> <span class="text-blue-800">100% </span> court & criminal verified*
-                        </h1>
-                        <p class="text-lg italic"> <span class="text-blue-800">Certified </span> handle medical
-                            conditions*</p>
-                        <p class="text-lg italic"> Medically trained by our professionals for <span
-                                class="text-blue-800">70 hrs*</span></p>
-                    </div>
+   <section class="px-4 py-10 overflow-hidden">
+    
+    <div class="bg-sky-950 rounded-tl-[40px] rounded-tr-[40px] py-10 px-4 md:px-8">
 
-                </div>
-                <div class="w-96 h-48 bg-white rounded-lg flex text-flex gap-2 p-2">
-                    <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
-                    <div>
-                        <h1 class="text-xl mt-2">Convenient and Personalized Services:</h1>
-                        <h1 class="text-lg italic"> <span class="text-blue-800">365 days </span>dedicated care manager*
-                        </h1>
-                        <p class="text-lg italic"> Customized <span class="text-blue-800"> 8hr/10hr/12hr/24hr
-                            </span>care plans*</p>
-                        <p class="text-lg italic"> <span class="text-blue-800"> 2000+</span> attendants & nurse profiles
-                        </p>
+        <!-- Heading -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl text-center text-white italic font-semibold">
+            Highlights of Care24
+        </h1>
 
-                    </div>
+        <!-- Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl p-5 flex gap-4 shadow-lg">
+
+                <div class="text-green-600 text-3xl shrink-0">
+                    <i class="fa-solid fa-circle-check"></i>
                 </div>
-                <div class="w-96 h-48 bg-white rounded-lg flex text-left gap-2 p-2">
-                    <div> <i class="fa-solid fa-calculator "></i></div>
-                    <div>
-                        <h1 class=" text-xl mt-2"> Transparent Pricing:</h1>
-                        <p class="text-lg italic"> <span class="text-blue-800"> No</span> Hidden Costs</p>
-                        <p class="text-lg italic"> <span class="text-blue-800"> Competitively</span> price world class
-                            healthcare<br />
-                            services
-                        </p>
-                        <p class="text-lg italic"> <span class="text-blue-800"> Refund </span>on unsatisfactory service
-                        </p>
-                    </div>
+
+                <div>
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-700">
+                        PROFESSIONAL & COMPASSIONATE CAREGIVERS:
+                    </h2>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">100%</span>
+                        court & criminal verified*
+                    </p>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">Certified</span>
+                        handle medical conditions*
+                    </p>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        Medically trained by professionals for
+                        <span class="text-blue-800 font-semibold">70 hrs*</span>
+                    </p>
                 </div>
             </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl p-5 flex gap-4 shadow-lg">
+
+                <div class="text-red-500 text-3xl shrink-0">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <div>
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-700">
+                        Convenient and Personalized Services:
+                    </h2>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">365 days</span>
+                        dedicated care manager*
+                    </p>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        Customized
+                        <span class="text-blue-800 font-semibold">
+                            8hr/10hr/12hr/24hr
+                        </span>
+                        care plans*
+                    </p>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">2000+</span>
+                        attendants & nurse profiles
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl p-5 flex gap-4 shadow-lg">
+
+                <div class="text-yellow-500 text-3xl shrink-0">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <div>
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-700">
+                        Transparent Pricing:
+                    </h2>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">No</span>
+                        Hidden Costs
+                    </p>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">Competitively</span>
+                        priced world class healthcare services
+                    </p>
+
+                    <p class="text-sm md:text-base italic text-gray-600 mt-2">
+                        <span class="text-blue-800 font-semibold">Refund</span>
+                        on unsatisfactory service
+                    </p>
+                </div>
+
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
      <footer class="bg-blue-950 text-white px-10 py-4 rounded-tl-[60px] rounded-tr-[60px] mt-8">
 
